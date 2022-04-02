@@ -12,6 +12,7 @@ import { SignupComponent } from './pages/signup/signup.component';
 import { NotFoundComponent } from './pages/not-found/not-found.component';
 import { UsersComponent } from './pages/users/users.component';
 import { PostsComponent } from './pages/posts/posts.component';
+import { LoginSuccessComponent } from './login-success/login-success.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { PostsComponent } from './pages/posts/posts.component';
     SignupComponent,
     NotFoundComponent,
     UsersComponent,
-    PostsComponent
+    PostsComponent,
+    LoginSuccessComponent
   ],
   imports: [
     BrowserModule,

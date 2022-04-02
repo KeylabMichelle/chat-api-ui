@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { LoginSuccessComponent } from './login-success/login-success.component';
 
 import { LoginComponent } from './pages/login/login.component';
 import { NotFoundComponent } from './pages/not-found/not-found.component';
@@ -12,7 +13,8 @@ const routes: Routes = [
   { path: '', redirectTo: 'login', pathMatch: 'full' },
   { path: 'login', component: LoginComponent },
   { path: 'signup', component: SignupComponent },
-  { path: 'users', component: UsersComponent, canActivate: [AuthGuard] },
+  { path: 'users', component: UsersComponent },
+  { path: 'login-success', component: LoginSuccessComponent },
   { path: 'posts', component: PostsComponent, canActivate: [AuthGuard] },
   { path: 'users/:userId/posts', component: PostsComponent, canActivate: [AuthGuard] },
   { path: '404', component: NotFoundComponent },

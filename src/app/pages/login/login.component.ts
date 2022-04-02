@@ -22,14 +22,20 @@ export class LoginComponent implements OnInit {
   ngOnInit(): void {
   }
 
+
   login() {
-    console.log('Enviar datos', this.credentials);
-    this.loginService.login(this.credentials).then(response => {
-      this.authService.save(response.token);
-      this.router.navigate(['/users']);
-    }).catch(e => {
-      console.log('datos incorrectos');
-    });
+    //console.log('Enviar datos', this.credentials);
+    this.loginService.login({email: this.credentials.username, password: this.credentials.password}).
+    subscribe( {
+      complete:()=>{
+        this.router.navigate(['/login-success']);
+      },
+      error:(err)=> {
+        console.log(err)
+      }
+      
+    })
   }
+
 
 }

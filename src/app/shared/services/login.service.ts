@@ -1,19 +1,15 @@
 import { Injectable } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
+import { Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
 })
 export class LoginService {
 
-  constructor() { }
+  constructor( private http: HttpClient) { }
 
-  login(credentials: any): Promise<any> {
-    return new Promise((resolve, reject) => {
-      setTimeout(() => {
-        resolve({
-          token: '12345678987654346786765435'
-        });
-      }, 1000);
-    });
+  login(credentials: any): Observable<any> {
+    return this.http.post("http://localhost:3000/api/users/login", credentials);
   }
 }

@@ -1,26 +1,29 @@
 <div>
-    {{form.valid}}
+    <!-- {{form.valid}} -->
     <form [formGroup]="form" (submit)="sendData()">
         <div>
-            <input type="text" name="fullname" placeholder="Full name" formControlName="name">
+            <input type="text" name="fullname" placeholder="Full name" formControlName="name" required>
         </div>
         <div>
-            <input type="text" name="username" placeholder="Username" formControlName="username">
+            <input type="text" name="username" placeholder="Username" formControlName="username" required>
         </div>
         <div>
-            <input type="text" name="email" placeholder="Email" formControlName="email">
+            <input type="text" name="email" placeholder="Email" formControlName="email" required>
         </div>
         <div>
-            <input [type]="showPassword ? 'text' : 'password'" name="password" placeholder="Password" formControlName="password">
+            <input [type]="showPassword ? 'text' : 'password'" name="password" placeholder="Password" formControlName="password" minlength="8" required >
             <button (click)="toggleShowPassword()">{{showPassword ? 'Hide' : 'Show'}}</button>
         </div>
         <div>
-            <input type="password" name="confirm" placeholder="Confirm your password" formControlName="confirm">
+            <input type="password" name="confirm" placeholder="Confirm your password" formControlName="confirm" required>
+        </div>
+        <div>
+            <label><input type="checkbox" name="terminosCondiciones" formControlName="terminosCondiciones" > Aceptar términos y condiciones </label><br>
         </div>
         <div>
             <button>Sign up</button>
         </div>
-        <span *ngIf="form.errors && form.errors['passwordMismatch']">Passwords don't match</span>
+        <span *ngIf="form.errors && form.errors['passwordMismatch']" >Passwords don't match</span>
         <div>
             Have an account? <a routerLink="/login">Log in</a>
         </div>

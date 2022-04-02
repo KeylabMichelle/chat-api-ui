@@ -2,11 +2,13 @@
     <form (submit)="login()">
         <div>
             <label for="username">Username: </label>
-            <input type="text" [(ngModel)]="credentials.username" name="username" placeholder="Username">
+            <input type="text" [(ngModel)]="credentials.username" name="username" placeholder="Username" required>
+            
         </div>
         <div>
             <label for="password">Password: </label>
-            <input type="password" [(ngModel)]="credentials.password" name="password" placeholder="Password">
+            <input type="password" [(ngModel)]="credentials.password" name="password" placeholder="Password" required>
+
         </div>
         <div>
             <button>Log in</button>

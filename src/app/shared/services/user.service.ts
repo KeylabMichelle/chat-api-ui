@@ -14,6 +14,10 @@ export class UserService {
     const url = 'https://jsonplaceholder.typicode.com/users';
     return this.httpClient.get(url);
   }
+
+  signup(credentials: any): Observable<any> {
+    return this.httpClient.post("http://localhost:3000/api/users/signup", credentials);
+  }
 }
 
 
